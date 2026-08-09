@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BahaCare</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="nav">
+
+            <div class="brand">
+
+                <span class="logo">
+                    🌊
+                </span>
+
+                BahaCare
+
+            </div>
+
+            <span id="status" class="status">
+                ● CONNECTED
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div>
+
+                <h1>
+                    Health Support During Floods
+                </h1>
+
+                <p>
+                    Essential health information and emergency
+                    requests, designed to remain available even
+                    when there is no Wi-Fi.
+                </p>
+
+            </div>
+
+            <div class="badge">
+                📱 Offline-first support
+            </div>
+
+        </section>
+
+
+        <!-- FLOOD ALERT -->
+
+        <section class="alert">
+
+            <div>
+
+                <h2>
+                    ⚠️ Flood Alert
+                </h2>
+
+                <p>
+                    Heavy rainfall may cause rising water levels.
+                    Prepare your emergency bag and move important
+                    belongings to a higher location.
+                </p>
+
+            </div>
+
+            <button
+                class="whitebtn"
+                onclick="show('sms')">
+
+                View Critical Alerts
+
+            </button>
+
+        </section>
+
+
+        <!-- FEATURE CARDS -->
+
+        <div class="grid">
+
+
+            <!-- HEALTH GUIDE -->
+
+            <button
+                class="card"
+                onclick="show('health')">
+
+                <div class="ico">
+                    🩹
+                </div>
+
+                <h3>
+                    Offline Health Guide
+                </h3>
+
+                <p>
+                    Access basic first-aid and flood-related
+                    health information without internet.
+                </p>
+
+            </button>
+
+
+            <!-- REQUEST ASSISTANCE -->
+
+            <button
+                class="card"
+                onclick="show('request')">
+
+                <div class="ico">
+                    📋
+                </div>
+
+                <h3>
+                    Request Assistance
+                </h3>
+
+                <p>
+                    Submit a request even while offline.
+                    Your request will be queued.
+                </p>
+
+            </button>
+
+
+            <!-- HEALTH OUTPOST -->
+
+            <button
+                class="card"
+                onclick="show('outpost')">
+
+                <div class="ico">
+                    🏥
+                </div>
+
+                <h3>
+                    Health Outposts
+                </h3>
+
+                <p>
+                    View temporary health stations and
+                    available community assistance.
+                </p>
+
+            </button>
+
+
+            <!-- SMS -->
+
+            <button
+                class="card"
+                onclick="show('sms')">
+
+                <div class="ico">
+                    📱
+                </div>
+
+                <h3>
+                    SMS Alerts
+                </h3>
+
+                <p>
+                    Receive critical warnings and
+                    health-outpost information through SMS.
+                </p>
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             OFFLINE HEALTH GUIDE
+        ========================== -->
+
+        <section
+            id="health"
+            class="panel hidden">
+
+            <h2>
+                🩹 Offline Health Guide
+            </h2>
+
+
+            <div class="item">
+
+                <h3>
+                    Skin irritation after flood exposure
+                </h3>
+
+                <p>
+                    Wash exposed skin with clean water and soap,
+                    keep it clean and dry, and seek medical care
+                    if symptoms worsen.
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <h3>
+                    Safe drinking water
+                </h3>
+
+                <p>
+                    Follow local health authority guidance for
+                    boiling, disinfection, or other approved
+                    purification methods.
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <h3>
+                    Minor cuts and wounds
+                </h3>
+
+                <p>
+                    Clean with safe water and cover with a clean
+                    dressing. Seek care for deep wounds, severe
+                    bleeding, or infection signs.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             REQUEST ASSISTANCE
+        ========================== -->
+
+        <section
+            id="request"
+            class="panel hidden">
+
+            <h2>
+                📋 Request Assistance
+            </h2>
+
+
+            <div class="notice">
+
+                📵
+
+                <b>
+                    Offline submission enabled.
+                </b>
+
+                Your request is saved on this device
+                and queued until connection returns.
+
+            </div>
+
+
+            <form id="form">
+
+                <label>
+                    Name
+                </label>
+
+                <input
+                    id="name"
+                    type="text"
+                    required>
+
+
+                <label>
+                    Type of assistance
+                </label>
+
+                <select id="type">
+
+                    <option>
+                        Medical assistance
+                    </option>
+
+                    <option>
+                        Drinking water
+                    </option>
+
+                    <option>
+                        Food
+                    </option>
+
+                    <option>
+                        Baby supplies
+                    </option>
+
+                    <option>
+                        Evacuation assistance
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label>
+                    What do you need?
+                </label>
+
+                <textarea
+                    id="desc"
+                    required>
+                </textarea>
+
+
+                <button
+                    class="btn"
+                    type="submit">
+
+                    Save Request Offline
+
+                </button>
+
+            </form>
+
+
+            <div id="requests">
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HEALTH OUTPOSTS
+        ========================== -->
+
+        <section
+            id="outpost"
+            class="panel hidden">
+
+            <h2>
+                🏥 Temporary Health Outposts
+            </h2>
+
+
+            <div class="item">
+
+                <h3>
+                    Barangay Evacuation Center
+                </h3>
+
+                <p>
+                    Basic first aid and health screening
+                    · <b>OPEN · 0.3 km</b>
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <h3>
+                    Temporary Health Station
+                </h3>
+
+                <p>
+                    Medical consultation and medicine
+                    distribution · <b>OPEN · 0.7 km</b>
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <h3>
+                    Mobile Health Team
+                </h3>
+
+                <p>
+                    Community-based health assistance
+                    · <b>SCHEDULED · 1.2 km</b>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SMS ALERTS
+        ========================== -->
+
+        <section
+            id="sms"
+            class="panel hidden">
+
+            <h2>
+                📱 SMS Alerts
+            </h2>
+
+
+            <div class="item">
+
+                <h3>
+                    ⚠️ EARLY WARNING
+                </h3>
+
+                <p>
+                    Heavy rainfall may cause flooding.
+                    Move important belongings to higher
+                    areas and monitor official barangay
+                    announcements.
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <h3>
+                    🏥 HEALTH OUTPOST
+                </h3>
+
+                <p>
+                    Temporary health assistance is available
+                    at the designated evacuation center.
+                </p>
+
+            </div>
+
+
+            <button
+                class="btn"
+                onclick="simulateSMS()">
+
+                📩 Simulate Incoming SMS
+
+            </button>
+
+
+            <p id="smsResult">
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        BahaCare Prototype •
+        Designed for flood-resilient communities
+
+        <br>
+
+        For demonstration purposes only.
+        Health information should be validated by
+        qualified health authorities before deployment.
+
+    </footer>
+
+
+    <!-- Connect JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
